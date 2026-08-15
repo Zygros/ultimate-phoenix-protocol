@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "profile": "archive-or-hybrid",
+  "upgrade": "additive-splus-baseline",
+  "changed_files": [
+    "ultimate-phoenix-protocol/SECURITY.md",
+    "ultimate-phoenix-protocol/CONTRIBUTING.md",
+    "ultimate-phoenix-protocol/LICENSE-STATUS.md",
+    "ultimate-phoenix-protocol/DEPENDENCY-STATUS.md",
+    "ultimate-phoenix-protocol/SPLUS.md",
+    "docs/PROVENANCE.md",
+    "scripts/splus_check.py",
+    ".gitignore",
+    "ultimate-phoenix-protocol/README.md",
+    "workflows/splus-hygiene.yml",
+    "CI-STATUS.md"
+  ],
+  "source_deletion": false,
+  "source_overwrite": false,
+  "ci_status": "workflow-not-published-due-to-github-permission",
+  "generated_workflow_removed_before_publish": true
+}
