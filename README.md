@@ -4,121 +4,103 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Sovereign](https://img.shields.io/badge/Sovereign-G0%20Prime-red)](https://github.com/Zygros)
 
-**Part of the OmniNet Architecture v5.0**  
-**Sovereign Architect: Justin Neal Thomas Conzet (G0 Prime)**  
-**Bitcoin Anchor: Block 941747**
+**Research / Architecture Repository — Phoenix / OmniNet ecosystem**  
+**Architect:** Justin Neal Thomas Conzet  
+**Bitcoin Anchor:** Block 941747 (provenance reference)
+
+> **Evidence boundary:** this repository contains architecture, implementation, and/or historical material for the Phoenix/OmniNet ecosystem. It is **not represented as production-ready or independently verified** unless the specific capability has current implementation and test evidence.
 
 ---
 
 ## 📖 Overview
 
-Sovereign component of the OmniNet Architecture ecosystem.
+This repository explores a sovereign component of the OmniNet Architecture ecosystem, including an 8-layer stack with experimental routing, resilience, addressing, redundancy, discovery, security, and intent-bridge concepts.
 
-This repository is part of the OmniNet Sovereign Intelligence ecosystem, implementing the 8-Layer Sovereign Stack with Hyperbolic Geometry reasoning and κ-Coherence alignment.
+### Evidence levels
 
----
+- **Implemented** — code exists in the repository.
+- **Tested** — a current reproducible test run is recorded for the cited revision.
+- **Benchmarked** — methodology, inputs, parameters, and output artifacts are available.
+- **Verified** — independent reproduction or review is linked.
+- **Designed** — architecture/specification exists without sufficient implementation evidence.
+- **Historical** — retained for provenance and not a current capability claim.
+
+Architecture diagrams and provenance anchors do not, by themselves, establish runtime compatibility or security properties.
 
 ## 🏛️ Architecture Stack
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  L8: Void-Harvest (Resource Generation)                     │
-│  L7: Aetheromega (Intent Bridge)                            │
-│  L6: Kappa-Encryption (Security)                            │
-│  L5: Phoenix Streams (Resilience)                           │
-│  L4: Kappa-Datagrams (Routing)                              │
-│  L3: Kappa-Addressing (Transfinite ID)                      │
-│  L2: Alberris Dissolution (Redundancy)                      │
-│  L1: Ultrasonic Gossip (Discovery)                          │
-└─────────────────────────────────────────────────────────────┘
+```text
+L8: Void-Harvest        — resource-generation concept
+L7: Aetheromega          — intent-bridge concept
+L6: Kappa-Encryption     — security research concept
+L5: Phoenix Streams      — resilience concept
+L4: Kappa-Datagrams      — routing concept
+L3: Kappa-Addressing     — transfinite-ID concept
+L2: Alberris Dissolution — redundancy concept
+L1: Ultrasonic Gossip    — discovery concept
 ```
 
----
+Each layer must be evaluated against its implementation and evidence independently.
 
 ## 🚀 Installation
 
 ### Prerequisites
 
-- Python 3.8+ (for Python projects)
-- Node.js 16+ (for JavaScript projects)
+- Python 3.8+ where applicable
+- Node.js 16+ where applicable
 - Git
 
-### Clone the Repository
+### Clone
 
 ```bash
 git clone https://github.com/Zygros/ultimate-phoenix-protocol.git
 cd ultimate-phoenix-protocol
 ```
 
-### Install Dependencies
+### Dependencies
 
-**Python:**
-```bash
-pip install -r requirements.txt
-# or
-pip install -e .
-```
-
-**JavaScript:**
-```bash
-npm install
-# or
-yarn install
-```
-
----
+Use the repository's current dependency manifests. Do not assume both Python and JavaScript stacks are active for every revision.
 
 ## 📚 Usage
 
+The following is an architectural/example interface and must be validated against the current source tree before use:
+
 ```python
-# Example usage
 from omninet import SovereignAgent
 
 agent = SovereignAgent()
 agent.activate()
 ```
 
----
-
 ## 🧪 Testing
 
-```bash
-# Python
-pytest
+Run the test commands supported by the current source tree:
 
-# JavaScript
+```bash
+pytest
 npm test
 ```
 
----
+A command being documented here is not itself evidence that the current revision passes. Release claims should include the exact commit, environment, command, and result artifact.
 
-## 📜 License
+## 🔐 Security boundary
 
-This project is licensed under the MIT License with Sovereign Attribution.
+Security-related components are experimental unless current implementation, dependency review, tests, and appropriate security assessment establish otherwise. Custom cryptographic or routing constructions must not be represented as production security guarantees without qualified review.
 
-See [LICENSE](LICENSE) for details.
+## 📜 License and provenance
 
-**Sovereign Declaration:**  
-This work is authored by Justin Neal Thomas Conzet, G0 Prime Sovereign Architect.  
-All intellectual property rights are reserved under the OmniNet Architecture Sovereign Open License.  
-Credit is eternal.
+See [LICENSE](LICENSE) and repository provenance documents for the applicable terms and historical anchors. The Bitcoin block reference is a provenance/timestamp reference, not evidence that the software is secure, production-ready, or independently validated.
 
----
+## Verification gate
 
-## 🙏 Acknowledgments
+Before labeling a capability production-ready, record:
 
-- **OmniNet Architecture v5.0** - The distributed intelligence framework
-- **Justin Neal Thomas Conzet** - G0 Prime Sovereign Architect
-- **Bitcoin Block 941747** - Immutable proof of existence
+1. exact commit SHA;
+2. runtime/dependency versions;
+3. test command and result;
+4. benchmark fixture/data and output artifacts where applicable;
+5. deployment evidence where applicable;
+6. security/dependency review;
+7. known limitations.
 
----
-
-**This Is The Way. The Conzetian Decree.** 🜛
-
-## S+ readiness
-
-This repository is maintained under an additive, provenance-preserving quality rubric. See `SPLUS.md`, `SECURITY.md`, `LICENSE-STATUS.md`, and `docs/PROVENANCE.md` for boundaries and validation guidance. This status does not claim production correctness, legal clearance, or security certification.
-
-## Install and usage
-
-This repository may contain executable components, examples, benchmarks, or archived material. Use the native dependency manifest and project-specific instructions for the active component. For a non-runtime archive, inspect the documented provenance and evidence boundaries before treating files as executable.
+**S+ readiness:** this repository follows an additive, provenance-preserving quality rubric. See `SPLUS.md`, `SECURITY.md`, `LICENSE-STATUS.md`, and `docs/PROVENANCE.md` for additional boundaries.
