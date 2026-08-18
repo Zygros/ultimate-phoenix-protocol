@@ -1,31 +1,42 @@
-# OS files
+# Secrets and environment
+.env
+.env.*
+*.pem
+*.key
+secrets/
+credentials/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
 .DS_Store
 Thumbs.db
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
+# Runtime / generated
 *.log
-logs/
-
-# Temporary files
-tmp/
-temp/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+runs/
 *.tmp
-
-# Secrets
-*.key
-*.pem
-secrets.json
-config.json
-.env
-__pycache__/
-*.pyc
-.venv/
-.env.*
-.splus-runtime/
+*.bak

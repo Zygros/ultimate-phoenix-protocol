@@ -1,7 +1,13 @@
 # Contributing
 
-Changes should be small, reviewable, and provenance-preserving. Describe the intent, affected paths, validation performed, and any unresolved uncertainty.
+**Always Add · Never Take · Zero Friction**
 
-Do not overwrite historical source material silently. Add tests or a deterministic validation command when changing executable behavior. Keep credentials, generated runtime state, and private data out of commits.
+## Principles
 
-Before opening a pull request, run the repository’s documented checks and review `SPLUS.md`, `SECURITY.md`, and `LICENSE-STATUS.md`.
+1. Changes must be small, reviewable, and provenance-preserving.
+2. Do not delete, archive, or rewrite history silently.
+3. Keep credentials, generated runtime state, and private data out of commits.
+4. Describe intent, affected paths, validation performed, and any unresolved uncertainty.
+
+Claims remain DESIGNED until executable evidence is linked.
+Local evidence does not equal independent reproduction.
