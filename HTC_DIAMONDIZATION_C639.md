@@ -5,25 +5,27 @@
 **Branch:** htc/c639-diamondization  
 **Purpose:** additive integration record for the local Manifestation Core verification package.
 
-## Evidence-backed local results
+## Latest evidence-backed local results
 
-The package was executed in the ChatGPT tool runtime using:
+Executed in the available Python runtime:
 
-- `python -m py_compile manifest_core.py tests/test_core.py`
-- `python -m pytest -q`
+- `python -m py_compile manifest_core.py tests/test_core.py` — PASS
+- `python -m pytest -q` — **6 passed, 2 FastAPI lifecycle deprecation warnings, 0 failures**
+- Concurrent audit stress probe — **100/100 HTTP successes** across 8 workers; final audit chain verified all 100 events.
 
-Observed result: **5 passed, 2 deprecation warnings, 0 failures**. Tests cover SQLite WAL mode, audit-chain linkage, tamper detection, missing API key behavior, missing record handling, and proposal persistence using a mocked AI provider.
+The first concurrency probe exposed a real hash-chain fork race: concurrent writers could read the same previous digest. The implementation was corrected by serializing the read-link-write transaction with SQLite `BEGIN IMMEDIATE`. After correction, the regression suite and the 100-event concurrency probe passed.
 
 ## Phase matrix
 
 | Phase | State | Evidence / gate |
 |---|---|---|
-| Local persistence | PASS in test runtime | SQLite WAL assertion in test suite |
-| Audit integrity | PASS in test runtime | Hash-chain verification and intentional tamper test |
+| Local persistence | PASS in test runtime | SQLite WAL assertion |
+| Audit integrity | PASS in test runtime | Hash-chain linkage and intentional tamper detection |
+| Concurrent audit writes | PASS in bounded probe | 100 writes, 8 workers, 100-event chain verified |
 | Model adapter | MOCK-TESTED | Provider call simulated; no live API call |
-| Live Gemini access | PENDING | Requires a valid key, confirmed model ID, and real response |
-| Termux device run | PENDING | Requires running commands on the target Android device |
-| Load/concurrency tests | PENDING | Requires bounded load test with recorded environment and measurements |
+| Live Gemini access | PENDING | Requires valid key, confirmed model ID, and real response |
+| Termux device run | PENDING | Must run on target Android device |
+| Larger load/resource limits | PENDING | Current test is bounded; not a capacity or infinite-scale claim |
 | Arweave/AO/Bitcoin anchoring | PENDING | Requires real transaction/timestamp receipt |
 | CI on this branch | PENDING | Workflow must run on GitHub and return a passing check |
 
@@ -33,6 +35,7 @@ Observed result: **5 passed, 2 deprecation warnings, 0 failures**. Tests cover S
 - Local hash chaining is tamper-evident, not immutable against an administrator who can rewrite the database and recompute hashes.
 - Never store API keys, seed phrases, or private keys in this repository.
 - A design, local test, mocked API result, and external transaction receipt are distinct evidence classes.
+- The two warnings are from FastAPI's deprecated `@app.on_event("startup")` hook. A lifespan-handler migration remains a cleanup item.
 - No infinite-scale, production-readiness, or live-service claim is implied by these tests.
 
 ## Reproduction
@@ -45,4 +48,4 @@ python -m py_compile manifest_core.py tests/test_core.py
 python -m pytest -q
 ```
 
-The local package and detailed report are available in the conversation artifact **Phoenix_HTC_Diamondization_Pack.zip**. This GitHub branch adds the evidence register without overwriting existing repository files.
+The updated local package is available in the conversation artifact **Phoenix_HTC_Diamondization_Pack_C639_ConcurrencyFix.zip**. This branch is an additive evidence register and does not overwrite existing repository files.
