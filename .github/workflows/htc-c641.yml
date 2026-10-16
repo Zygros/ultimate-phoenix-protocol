@@ -1,0 +1,33 @@
+name: Phoenix HTC C641 Verification
+
+on:
+  push:
+    branches: [htc/c639-diamondization]
+    paths:
+      - "htc/diamondization/**"
+      - ".github/workflows/htc-c641.yml"
+  pull_request:
+    paths:
+      - "htc/diamondization/**"
+      - ".github/workflows/htc-c641.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: htc/diamondization
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: htc/diamondization/requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Compile source and tests
+        run: python -m py_compile manifest_core.py tests/test_core.py
+      - name: Run regression suite
+        run: python -m pytest -q
