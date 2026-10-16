@@ -5,7 +5,7 @@
 **Branch:** htc/c639-diamondization  
 **Purpose:** additive evidence register and reproducible source/test publication for the Phoenix Manifestation Core.
 
-## Latest local evidence
+## Latest local and hosted evidence
 
 Executed in the available Python runtime:
 
@@ -16,6 +16,8 @@ Executed in the available Python runtime:
 - Added a regression test for invalid audit input bounds.
 - Published implementation, tests, requirements, README, and GitHub Actions workflow into this branch.
 
+GitHub Actions run **38894067636**, Phoenix HTC C641 Verification, completed successfully. The job's dependency installation, source compilation, and regression-suite steps all report success: https://github.com/Zygros/ultimate-phoenix-protocol/actions/runs/38894067636
+
 ## Phase matrix
 
 | Phase | State | Evidence / gate |
@@ -25,12 +27,12 @@ Executed in the available Python runtime:
 | Concurrent audit writes | PASS in bounded probe | 100 writes, 8 workers, 100-event chain verified |
 | Input validation | PASS in regression tests | Empty event type and oversized detail rejected |
 | FastAPI lifecycle | PASS in local suite | Lifespan handler; no deprecation warnings |
+| GitHub Actions CI | PASS | Hosted run 38894067636 completed successfully |
 | Model adapter | MOCK-TESTED | Provider call simulated; no live API call |
 | Live Gemini access | PENDING | Requires valid key, confirmed model ID, and real response |
 | Termux device run | PENDING | Must run on target Android device |
 | Larger load/resource limits | PENDING | Current test is bounded; not a capacity or infinite-scale claim |
 | Arweave/AO/Bitcoin anchoring | PENDING | Requires real transaction/timestamp receipt |
-| GitHub Actions CI | ADDED; RUN STATUS TO VERIFY | Workflow published at .github/workflows/htc-c641.yml; inspect actual run before marking PASS |
 
 ## Safety and evidence rules
 
@@ -48,4 +50,4 @@ From htc/diamondization in the repository:
     python -m py_compile manifest_core.py tests/test_core.py
     python -m pytest -q
 
-The packaged local artifact is available as Phoenix_HTC_Diamondization_Pack_C641.zip. The source and test suite are now present in this branch; the pull request remains unmerged.
+The packaged local artifact is available as Phoenix_HTC_Diamondization_Pack_C641.zip. The source and test suite are now present in this branch; the pull request remains unmerged and in draft for review.
